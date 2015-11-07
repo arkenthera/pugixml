@@ -29,6 +29,12 @@
 // Uncomment this to disable exceptions
 // #define PUGIXML_NO_EXCEPTIONS
 
+#ifdef _DLL
+#define PUGIXML_API __declspec(dllexport)
+#else
+#define PUGIXML_API __declspec(dllimport)
+#endif
+
 // Set this to control attributes for public classes/functions, i.e.:
 // #define PUGIXML_API __declspec(dllexport) // to export all public symbols from DLL
 // #define PUGIXML_CLASS __declspec(dllimport) // to import all classes from DLL
